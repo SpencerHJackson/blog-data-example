@@ -1,3 +1,4 @@
+/* Get the fonts in there */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* styles.css */
@@ -55,13 +56,14 @@ body {
 
 @media (min-width: 768px) {
     .post-banner {
-        height: 300px; /* Adjust this value to suit your needs */
+        height: 300px;
         object-fit: cover;
     }
 }
 
 @media (max-width: 768px) {
     body {
+        font-size: 1.2em;
         padding-top: 160px;
         padding-left: 20px;
         padding-right: 20px;
@@ -73,4 +75,18 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+}
+
+footer {
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #212529;
+    text-align: center;
+    padding: 20px;
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
