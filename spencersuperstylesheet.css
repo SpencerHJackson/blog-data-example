@@ -21,4 +21,5 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #cee7ff, #ffffff);
 }
