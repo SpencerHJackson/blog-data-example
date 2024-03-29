@@ -24,18 +24,18 @@
         <section v-for="post in posts" class="post">
             <img :src="post.bannerImage" alt="Banner image for the post" class="post-banner">
             <h2 class="post-title">{{ post.title }}</h2>
-            <p class="post-author">Author: {{ post.author }}</p>
-            <p class="post-published">Published: {{ post.published }}</p>
-            <p class="post-reading-time">Estimated reading time: {{ post.readingTime }} minutes</p>
+            <span class="reading-time-pill">{{ post.readingTime }} read</span>
+            <p class="post-author"><b>Author:</b> {{ post.author }}</p>
+            <p class="post-published"><b>Published:</b> {{ post.published }}</p>
             <p class="post-preview" v-if="!post.showFullPost">{{ post.preview }}</p>
             <div class="post-content" v-else>
                 <p v-for='line in post.body.split("\n")'>{{ line }}</p>
             </div>
-            <button @click="post.showFullPost = !post.showFullPost">
+            <button class="show-more-button" @click="post.showFullPost = !post.showFullPost">
                 {{ post.showFullPost ? 'Show Less' : 'Read More' }}
             </button>
             <hr>
-            <p class="post-likes">Likes: {{ post.likes }}</p>
+            <i class="post-likes">Likes: {{ post.likes }}</i>
         </section>
         <section id="about-me">
             <h1 id="aboutmetitle" class="text-center">About Me</h1>
