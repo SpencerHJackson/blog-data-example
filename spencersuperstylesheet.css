@@ -98,12 +98,12 @@ footer {
 .post-title,
 .post-author,
 .post-published {
-    margin-bottom: 0px; /* Adjust this value as needed */
-    margin-top: 0px; /* Adjust this value as needed */
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .reading-time-pill {
-    background-color: #add8e6; /* Light blue background */
+    background-color: #add8e6;
     color: #212529;
     border-radius: 20px;
     padding: 2px 10px;
@@ -113,13 +113,13 @@ footer {
 }
 
 button {
-    background-color: #add8e6; /* Light blue background */
+    background-color: #add8e6;
     color: #212529;
     border-radius: 20px;
-    padding: 2px 10px; /* Adjust as needed */
-    font-size: 0.8em; /* Adjust as needed */
-    border: none; /* Remove default button border */
-    text-decoration: none; /* Remove default button underline */
+    padding: 2px 10px;
+    font-size: 0.8em;
+    border: none;
+    text-decoration: none;
 }
 
 button:hover {
