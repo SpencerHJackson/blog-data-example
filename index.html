@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spencer's Super Duper Blog Site</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="page.js" type="module"></script>
+    <script src="__lightserver__/reload-client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js"></script>
+    <link rel="stylesheet" href="spencersuperstylesheet.css">
+</head>
+<body id="app">
+    <header>
+        <nav class="header-bar">
+            <h1>Spencer's Blog Site</h1>
+            <a class="nav-link" href="#blog-posts-title">Top Posts</a>
+            <a class="nav-link" href="#" onclick="showArchivePopup()">Archive</a>
+            <a class="nav-link" href="#about-me">About Me</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="blog-posts-title" class="text-center">Blog Posts</h1>
+        <section v-for="post in posts" class="post">
+            <img :src="post.bannerImage" alt="Banner image for the post" class="post-banner">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <span class="reading-time-pill">{{ post.readingTime }} read</span>
+            <p class="post-author"><b>Author:</b> {{ post.author }}</p>
+            <p class="post-published"><b>Published:</b> {{ post.published }}</p>
+            <p class="post-preview" v-if="!post.showFullPost">{{ post.preview }}</p>
+            <div class="post-content" v-else>
+                <p v-for='line in post.body.split("\n")'>{{ line }}</p>
+            </div>
+            <button class="show-more-button" @click="post.showFullPost = !post.showFullPost">
+                {{ post.showFullPost ? 'Show Less' : 'Read More' }}
+            </button>
+            <hr>
+            <i class="post-likes">Likes: {{ post.likes }}</i>
+        </section>
+        <section id="about-me">
+            <h1 id="aboutmetitle" class="text-center">About Me</h1>
+            <p class="about-me-text">Spencer Jackson is more than a programmer. In fact, he is the <i>only</i> programmer. In 1987, he was bitten by a radioactive laptop, and the rest is history. Spencer, now known as computerman, has invented every single operating system known to humankind, can divide by zero, and even knows how to exit vim.</p>
+        </section>
+    </main>
+    <footer>
+        Copyright &copy; {{ new Date().getFullYear() }} His Excellency Spnecer Jackson VII. Every. Single. Last. Right. Reserved.
+    </footer>
+</body>
+</html>
+
+<script>
+
+    function showArchivePopup() {
+        alert('So sorry about this, but when posts are deleted we actually just yeet them into the nether. Sorry about that. There is no easter bunny, there is no tooth fairy and there is no archive.');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            let target = document.querySelector(this.getAttribute('href'));
+            window.scrollTo({
+                top: target.offsetTop - 190,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+</script>
