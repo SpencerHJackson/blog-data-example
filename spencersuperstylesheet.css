@@ -124,3 +124,31 @@ button {
 button:hover {
     cursor: pointer;
 }
+
+/* Styles for dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(to bottom, #333, #000);
+        color: #fff;
+    }
+
+    .post {
+        border-color: #fff;
+        background-color: #333;
+    }
+
+    .post-title,
+    .post-author,
+    .post-published {
+        color: #ddd;
+    }
+
+    a {
+        color: #add8e6;
+    }
+
+    footer {
+        color: #f8f9fa;
+        background-color: #212529;
+    }
+}
