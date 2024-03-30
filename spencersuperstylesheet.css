@@ -24,6 +24,7 @@ body {
     padding-top: 160px;
     padding-left: 120px;
     padding-right: 120px;
+    overflow-x: hidden;
     font-family: 'Nunito Sans', sans-serif;
     background: linear-gradient(to bottom, #cee7ff, #ffffff);
 }
